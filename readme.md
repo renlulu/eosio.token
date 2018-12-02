@@ -118,30 +118,30 @@ cleos set contract eosio.token eos_contract/eosio.token --abi eosio.token.abi -p
 #### 创建 token
 
 ```
-cleos push action eosio.token create '[ "eosio.token", "1000000000.0000 SYS"]' -p eosio.token@active
+cleos push action eosio.token create '[ "eosio.token", "1000000000.0000 EOS"]' -p eosio.token@active
 ```
 
 #### 发行 token
 
 ```
-cleos push action eosio.token issue '[ "alice", "100000.0000 SYS", "memo" ]' -p eosio.token@active
+cleos push action eosio.token issue '[ "alice", "100000000.0000 EOS", "memo" ]' -p eosio.token@active
 ```
 
 #### 查询 alice 的token
 
 ```
-cleos get currency balance eosio.token alice SYS
+cleos get currency balance eosio.token alice EOS
 ```
 
 #### 转账 alice -> bob
 
 ```
-cleos push action eosio.token transfer '[ "alice", "bob", "25.0000 SYS", "m" ]' -p alice@active
+cleos push action eosio.token transfer '[ "alice", "bob", "25.0000 EOS", "m" ]' -p alice@active
 ```
 
 #### 查询alice 和 bob 的token
 
 ```
-cleos get currency balance eosio.token alice SYS
-cleos get currency balance eosio.token bob SYS
+cleos get currency balance eosio.token alice EOS
+cleos get currency balance eosio.token bob EOS
 ```
