@@ -59,7 +59,7 @@ alias cleos='docker exec -it eosio /opt/eosio/bin/cleos --url http://127.0.0.1:7
 ```
 cleos wallet create --to-console
 ```
-保存好返回的密码 PW5HzAKEhrv2Tr8rNQ43jyaqNVWNK59wD4G2kz3Zi2msbGrSUWyco（仅开发模式下使用，生产模式另见文档）
+保存好返回的密码 PW5HtbmXtbFyRuNDuNyjkkeivPWcgGtmGGJT2sCpyPR2Ws6YB5RZp（仅开发模式下使用，生产模式另见文档）
 
 2. 钱包操作
 
