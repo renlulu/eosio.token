@@ -67,7 +67,9 @@ alias cleos='docker exec -it nodeos /opt/eosio/bin/cleos --url http://localhost:
 ```
  ./cleos --wallet-url=http://127.0.0.1:8888 wallet create --to-console
  ```
-保存好返回的密码 PW5Jxj4zs5aiAjMQWxhvqdcX3kGsFepXPSm93dasudpTKN89QXXpX（仅开发模式下使用，生产模式另见文档）
+保存好返回的密码 PW5KU9KwhNVN3guaJZU3pDWMVjTqZhqeBmLoKQeZqf49r2zNvjNN4（仅开发模式下使用，生产模式另见文档）
+
+50.72 PW5J6Cfi8RUt3ktQBWAYqgDEnUMGfXwp4gNZnf32JQRxYgq26vWtp
 
 2. 钱包操作
 
@@ -79,7 +81,7 @@ cleos wallet open
 cleos wallet list
 
 解锁钱包
-./cleos wallet unlock
+cleos --wallet-url=http://127.0.0.1:8888 wallet unlock
 ```
 
 3. 导入密钥
@@ -100,9 +102,22 @@ bob: 5HzbegC64rpPPf9BdHgMA8KWW5obBV89z9YyaA6z1LbQmZeSKkC
 4. 创建测试账户
 
 ```
-./cleos --wallet-url=http://127.0.0.1:8888  create account eosio alice EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
-./cleos --wallet-url=http://127.0.0.1:8888  create account eosio bob EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
-./cleos --wallet-url=http://127.0.0.1:8888 create account eosio eosio.token EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888  create account eosio alice EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888  create account eosio bob EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888  create account eosio xiaohuo EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888  create account eosio xiyu EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888  create account eosio yezong EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888  create account eosio yewei EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888  create account eosio laoma EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888  create account eosio zyp EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888  create account eosio dong  EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888  create account eosio gujie  EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888 create account eosio eosio.token EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888 create account eosio eosio.msig EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888 create account eosio eosio.ram EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888 create account eosio eosio.ramfee  EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+cleos --wallet-url=http://127.0.0.1:8888 create account eosio eosio.stake EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
+./cleos --wallet-url=http://127.0.0.1:8888 create account eosio eosio.system EOS5Cs5JmYnSZ2KSid9mJsXgaLk79pdnQNm7Jz47yQvZc4c1vs9kL
 ```
 
 单机测试情况下使用账户 eosio 来创建账户，公网环境下需要已经存在的账户去创建
@@ -119,6 +134,7 @@ eosio-cpp -I include -o eosio.token.wasm src/eosio.token.cpp --abigen
 
 ```
 ./cleos --wallet-url=http://127.0.0.1:8888 set contract eosio.token contract/eosio.token --abi eosio.token.abi -p eosio.token@active
+./cleos --wallet-url=http://127.0.0.1:8888 set contract eosio  contract/eosio.system --abi eosio.system.abi -p eosio@active
 ```
 
 ### 测试
@@ -138,13 +154,13 @@ eosio-cpp -I include -o eosio.token.wasm src/eosio.token.cpp --abigen
 #### 查询 alice 的token
 
 ```
-./cleos  --wallet-url=http://127.0.0.1:8888 get currency balance eosio.token alice EOS
+cleos  --wallet-url=http://127.0.0.1:8888 get currency balance eosio.token alice EOS
 ```
 
 #### 转账 alice -> bob
 
 ```
-./cleos  --wallet-url=http://127.0.0.1:8888 push action eosio.token transfer '[ "alice", "bob", "25.0000 EOS", "m" ]' -p alice@active
+cleos  --wallet-url=http://127.0.0.1:8888 push action eosio.token transfer '[ "alice", "gujie", "250000.0000 EOS", "m" ]' -p alice@active
 ```
 
 #### 查询alice 和 bob 的token
@@ -152,7 +168,14 @@ eosio-cpp -I include -o eosio.token.wasm src/eosio.token.cpp --abigen
 ```
 ./cleos  --wallet-url=http://127.0.0.1:8888 get currency balance eosio.token alice EOS
 ./cleos --wallet-url=http://127.0.0.1:8888 get currency balance eosio.token bob EOS
+./cleos --wallet-url=http://127.0.0.1:8888 get currency balance eosio.token pirate.game EOS
+./cleos --wallet-url=http://127.0.0.1:8888 get currency balance eosio.token xiaohuo EOS
 ```
+
+cleos --wallet-url=http://127.0.0.1:8888 system delegatebw alice pirate.game "1000 EOS" "1000 EOS" -p alice@active
+
+cleos --wallet-url=http://127.0.0.1:8888 get abi eosio
+cleos --wallet-url=http://127.0.0.1:8888 set contract eosio eosio.system
 
 
 
