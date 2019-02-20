@@ -81,7 +81,7 @@ cleos wallet open
 cleos wallet list
 
 解锁钱包
-cleos --wallet-url=http://127.0.0.1:8888 wallet unlock
+./cleos --wallet-url=http://127.0.0.1:8888 wallet unlock
 ```
 
 3. 导入密钥
@@ -154,7 +154,7 @@ eosio-cpp -I include -o eosio.token.wasm src/eosio.token.cpp --abigen
 #### 查询 alice 的token
 
 ```
-cleos  --wallet-url=http://127.0.0.1:8888 get currency balance eosio.token alice EOS
+cleos  --wallet-url=http://127.0.0.1:8888 get currency balance eosio.token bob EOS
 ```
 
 #### 转账 alice -> bob
